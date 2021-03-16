@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="step1.css">
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="crossorigin="anonymous" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,
+shrink-to-fit=no">
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDG
+MN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<title>Hello, world!</title>
+</head>
+<body>
+<section class="header_menu" id="header_menu">
+<div class="container-fluid px-0 shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 ">
+<a class="navbar-brand pl-5 pl-small-0" href="step1.html">
+<img src="images/logo.jpg" class="img img-fluid" width="120px"
+alt="logo">
+</a>
+<form class="form-inline ">
+<button class="navbar-toggler" type="button" data-toggle="collapse"data-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false"aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+</form>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item ">
+<a class="nav-link" href="step1.html">Home</a>
+</li>
+<li class="nav-item active">
+<a class="nav-link" href="product.html">Product<span
+class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="category.html">Category</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="about.html">About Us</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">Contact Us</a>
+</li>
+</ul>
+<div class="search mr-3">
+<a href="search.html" class="btn btn-sm btn-outline-primary">
+Search
+</a>
+</div>
+<div class="cart">
+<a href="cart.html">
+<i class="fa fa-shopping-cart fa-2x"></i>
+<span class="badge badge-pill badge-primary">24</span>
+</a>
+</div>
+</div>
+</nav>
+</div>
+</section>
+
+<section class="products py-5 my-5" id="products">
+<div class="container ">
+<div class="section_title text-center mb-5">
+<h1 class="text-capitalize">Products</h1>
+</div>
+<div class="row">
+<div class="col-md-3 border-right mb-small-5">
+<h4 class="mb-5 border-bottom">Filters</h4>
+<div class="mb-5">
+<label><b>Category</b></label>
+<ul class="list-group">
+<li class="list-group-item">Category 1</li>
+<li class="list-group-item">Category 2</li>
+<li class="list-group-item">Category 3</li>
+<li class="list-group-item">Category 4</li>
+<li class="list-group-item">Category 5</li>
+</ul>
+</div>
+<div>
+<form>
+<div class="form-group">
+<label><b>Price</b></label>
+<input type="range" min="100" max="1000" step="100"
+class="form-control-range">
+</div>
+</form>
+<div class="d-flex justify-content-between">
+<label>₹100</label>
+<label>₹1000</label>
+</div>
+</div>
+</div>
+<div class="col-md-9">
+	<div class="row mb-5">
+<div class="col-md-4 col-12">
+<div class="single_product shadow text-center p-1">
+<div class="product_img">
+<a href="product_detail.html"><img
+src="images/c1.webp" class="img img-fluid"
+alt=""></a>
+</div>
+<div class="product-caption my-3">
+<div class="product-ratting">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+<h5><a href="product_detail.html">Short Shirt with
+details</a></h5>
+<div class="price">
+<b><span class="mr-1">₹</span><span>400</span></b>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-12">
+<div class="single_product shadow text-center p-1 mt-small-5
+mb-small-5">
+<div class="product_img">
+<a href="product_detail.html"><img
+src="images/c2.webp" class="img img-fluid"
+alt=""></a>
+<div class="new_product">
+	<span class="badge py-2 px-3 badge-pill
+badge-danger">New</span>
+</div>
+</div>
+<div class="product-caption my-3">
+<div class="product-ratting">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+<h5><a href="product_detail.html">Blue Short Top with
+details</a></h5>
+<div class="price">
+<b><span class="mr-1">₹</span><span>400</span></b>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-12">
+<div class="single_product shadow text-center p-1">
+<div class="product_img">
+<a href="product_detail.html"><img
+src="images/c3.webp" class="img img-fluid"
+alt=""></a>
+<div class="new_product">
+<span class="badge py-2 px-3 badge-pill
+badge-danger">New</span>
+</div>
+</div>
+<div class="product-caption my-3">
+<div class="product-ratting">
+	<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+<h5><a href="product_detail.html">Blue Short Top with
+details</a></h5>
+<div class="price">
+<b><span class="mr-1">₹</span><span>400</span></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4 col-12">
+<div class="single_product shadow text-center p-1">
+<div class="product_img">
+<a href="product_detail.html"><img
+src="images/c4.webp" class="img img-fluid"
+alt=""></a>
+<div class="new_product">
+<span class="badge py-2 px-3 badge-pill
+badge-danger">New</span>
+</div>
+</div>
+<div class="product-caption my-3">
+<div class="product-ratting">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+<h5><a href="product_detail.html">Green Top with
+details</a></h5>
+<div class="price">
+<b><span class="mr-1">₹</span><span>400</span></b>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-12">
+<div class="single_product shadow text-center p-1 mt-small-5
+mb-small-5">
+<div class="product_img">
+<a href="product_detail.html"><img
+src="images/c5.webp" class="img img-fluid"
+alt=""></a>
+<div class="new_product">
+<span class="badge py-2 px-3 badge-pill
+badge-danger">New</span>
+</div>
+</div>
+<div class="product-caption my-3">
+<div class="product-ratting">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+<h5><a href="product_detail.html">Yellow Dress with
+details</a></h5>
+<div class="price">
+	<b><span class="mr-1">₹</span><span>400</span></b>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-12">
+<div class="single_product shadow text-center p-1">
+<div class="product_img">
+<a href="product_detail.html"><img
+src="images/c10.webp" class="img img-fluid"
+alt=""></a>
+</div>
+<div class="product-caption my-3">
+<div class="product-ratting">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+<h5><a href="product_detail.html">Green Dress with
+details</a></h5>
+<div class="price">
+<b><span class="mr-1">₹</span><span>400</span></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="footer_section pt-5 pb-2" id="footer_section">
+<footer>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-3 col-6 pl-5 pl-small-15">
+<div class="footer_title">
+<a href="step1.html"><img src="images/logo.jpg" width="150px"
+class="img img-fluid" alt="logo"></a>
+</div>
+<div>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, totam est
+illum ipsum quas ad
+dignissimos magni veritatis natus voluptatem.
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="footer_title pt-3 mb-3">
+<h3>Quick Links</h3>
+</div>
+<div class="footer_links">
+<ul>
+<li><a href="about.html">About</a></li>
+<li><a href="javascript:;">Offers & Discounts</a></li>
+<li><a href="javascript:;">Get Coupon</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="footer_title pt-3 mb-3">
+<h3>New Products</h3>
+</div>
+<div class="footer_links">
+<ul>
+<li><a href="javascript:;">Woman Cloth</a></li>
+<li><a href="javascript:;">Fashion Accessories</a></li>
+<li><a href="javascript:;">Man Accessories</a></li>
+<li><a href="javascript:;">Rubber made Toys</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="footer_title pt-3 mb-3">
+<h3>Support</h3>
+</div>
+<div class="footer_links">
+<ul>
+<li><a href="javascript:;">Frequently Asked Questions</a></li>
+<li><a href="javascript:;">Terms & Conditions</a></li>
+<li><a href="javascript:;">Privacy Policy</a></li>
+<li><a href="javascript:;">Report a Payment Issue</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="border-top">
+<h6 class="text-center mt-3">Copyright ©2020 All rights reserved
+</h6>
+</div>
+</footer>
+</section>
+<div class="backtop">
+<a id="button" href="#top" class="btn btn-lg btn-outline-danger" role="button">
+<i class="fas fa-chevron-up text-dark"></i>
+</a>
+</div>
+</body>
+</html>
