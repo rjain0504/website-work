@@ -1,0 +1,160 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    margin-top: 80px;
+    background-color:#FADBD8 ;
+}
+ul, ol {
+    list-style: none
+}
+.main {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    color: #fff;
+    max-height: 400px;
+}
+.slider {
+    position: relative
+    height:100px;
+}
+.slider .slider-parent {
+    padding: 0;
+    display: flex;
+}
+.slider .slider-parent .images-list {
+    background-size: cover;
+}
+.slider .slider-parent .images-list:first-of-type, .slider .slider-parent .images-list:last-of-type {
+    background-image: url(images/h1.png)
+}
+.slider .slider-parent .images-list:nth-of-type(2) {
+    background-image: url(images/h2.jpg)
+}
+.slider .slider-parent .images-list:nth-of-type(3) {
+    background-image: url(images/h3.jpg)
+}
+.slider .slider-parent .images-list:nth-of-type(4) {
+    background-image: url(images/h4.png)
+}
+
+.slider .buttom-circles {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: 10px
+}
+.slider .buttom-circles .buttom-circles-list {
+    display: inline-block
+}
+.slider .buttom-circles .buttom-circles-list:hover .fa:before, .slider .buttom-circles .buttom-circles-list.slider-active .fa:before {
+    content: "\f111";
+}
+.slider > .fa {
+    position: absolute;
+    top: 45%
+}
+.slider > .fa:first-of-type { right: 15px}
+.slider > .fa:last-of-type { left: 5px}
+.slider .fa {
+    
+    
+}
+ 
+@media(min-width: 50px) and (max-width:10px) {
+    .slider > .fa { font-size: 25px }
+    .slider .buttom-circles .buttom-circles-list { visibility: hidden }
+}
+@media(min-width: 50px) and (max-width: 100px) { 
+    .slider > .fa { font-size: 50px }
+    .slider .buttom-circles .buttom-circles-list { visibility: hidden }
+}
+@media(min-width: 50px) and (max-width: 100px) { 
+    .slider > .fa { font-size: 75px }
+    .slider .buttom-circles .buttom-circles-list { font-size: 17px }
+}
+@media(min-width: 500px) { 
+    .slider > .fa { font-size: 100px }
+    .slider .buttom-circles .buttom-circles-list { font-size: 25px }
+}
+ 
+.sidepanel {
+  height: 670px; /* Specify a height */
+  width: 180px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 80px;
+  left: 0;
+  background-color: crimson; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 10px; /* Place content 60px from the top */
+  transition: 2s; 
+  /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+  display: block;
+  transition: 2s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: crimson;
+
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 36px;
+  margin-left: 40px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+    margin-right: 20px;
+  font-size: 30px;
+  width:40px;
+  cursor: pointer;
+  background-color: crimson;
+  color: black;
+  padding-top: 0px;
+  padding-right: 0px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+.row{
+    width:1300px;
+    height: 700px;
+    margin-left: 10px;
+    margin-top: 60px;
+    border: crimson;
+}
+.row img{
+    max-height: 500px;
+}
+.btn-brand{
+    padding-right: 100px;
+
+}
+.btn a{
+    padding-right: 10px;
+    padding-bottom: 0px;
+}
+
+  

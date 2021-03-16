@@ -1,0 +1,98 @@
+body {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ7VJJa4-bdDzoF5OwJ_Whl1c8co5HEXo9HeX2l45j_qLI6MUKk&usqp=CAU);
+    background-size: cover;
+    background-position: center; 
+
+}
+
+body,
+html {
+    height: 100%;
+    font-family: "Lato";
+    color: crimson;
+    overflow-x:hidden;
+}
+
+
+h1 {
+	font-weight: 700;
+	font-size: 5em;
+}
+
+
+.content{
+	padding-top: 25%;
+	text-align: center;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.4),
+                 2px 8px 13px rgba(0,0,0,0.1),
+                 2px 18px 23px rgba(0,0,0,0.1);
+}
+
+hr {
+    width: 600px;
+    border-top: 6px solid crimson;
+    border-bottom: 1px solid rgba(8,8,8,0.2);
+}
+.video_selector{
+    position: fixed;
+    right: 0;
+    bottom:0;
+    min-width: 100%;
+    min-height: 100%;
+    width:auto;
+    height:auto;
+    z-index: -999;
+}
+
+h3{
+    padding-top:2px;
+    font-size:2.5em;
+    font-weight:600;
+
+}
+.jumbotron .container {
+    text-align:center;
+    margin-bottom:10px;
+    position: relative;
+    padding-bottom:5px;
+    font-family: 'Bungee', cursive;
+  
+}
+.row{
+    margin-bottom:400px;
+
+}
+.jumbotron{
+    background-color:Black;
+    height:100%;
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+
+}
+.thumbnail{
+    margin-right:70px;
+    margin-left:70px;
+    
+}
+h2{
+    font-size:4.5em;
+}
+.coloumn{
+    margin-left:100px;
+    color:white;
+    padding-top:100px;
+    padding-bottom:0px;
+}
+
+.coloumn h3{
+    padding-bottom:10px;
+}
+li a{
+    color:crimson;
+}
+.navbar-brand{
+    color:crimson;
+}
+h2{
+    padding-top:0px;
+}

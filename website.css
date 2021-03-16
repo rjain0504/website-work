@@ -1,0 +1,140 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    margin-top: 0px;
+    padding-top: 0px;
+    background-color:#FADBD8 ;
+}
+ul, ol {
+    list-style: none
+}
+.main {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    color: #fff;
+    max-height: 400px;
+}
+.slider {
+    position: relative
+    height:100px;
+}
+.slider .slider-parent {
+    padding: 0;
+    display: flex
+}
+.slider .slider-parent .images-list {
+    background-size: cover;
+}
+.slider .slider-parent .images-list:first-of-type, .slider .slider-parent .images-list:last-of-type {
+    background-image: url(images/11.jpg)
+}
+.slider .slider-parent .images-list:nth-of-type(2) {
+    background-image: url(images/12.jpg)
+}
+.slider .slider-parent .images-list:nth-of-type(3) {
+    background-image: url(images/13.jpg)
+}
+
+.slider .buttom-circles {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: 10px
+}
+.slider .buttom-circles .buttom-circles-list {
+    display: inline-block
+}
+.slider .buttom-circles .buttom-circles-list:hover .fa:before, .slider .buttom-circles .buttom-circles-list.slider-active .fa:before {
+    content: "\f111";
+}
+.slider > .fa {
+    position: absolute;
+    top: 45%
+}
+.slider > .fa:first-of-type { right: 15px}
+.slider > .fa:last-of-type { left: 5px}
+.slider .fa {
+    
+    
+}
+ 
+@media(min-width: 50px) and (max-width:10px) {
+    .slider > .fa { font-size: 25px }
+    .slider .buttom-circles .buttom-circles-list { visibility: hidden }
+}
+@media(min-width: 50px) and (max-width: 100px) { 
+    .slider > .fa { font-size: 50px }
+    .slider .buttom-circles .buttom-circles-list { visibility: hidden }
+}
+@media(min-width: 50px) and (max-width: 100px) { 
+    .slider > .fa { font-size: 75px }
+    .slider .buttom-circles .buttom-circles-list { font-size: 17px }
+}
+@media(min-width: 500px) { 
+    .slider > .fa { font-size: 100px }
+    .slider .buttom-circles .buttom-circles-list { font-size: 25px }
+}
+ 
+
+.row{
+    width:1300px;
+    height: 700px;
+    margin-left: 10px;
+    margin-top: 60px;
+    border: crimson;
+}
+.row img{
+    max-height: 500px;
+}
+.btn-brand{
+    padding-right: 100px;
+
+
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 70px; /* Stay at the top */
+  left: 0;
+  background-color: #F08080; 
+  font-family: 'Monoton', cursive;
+  padding-bottom: 80px;
+  
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color:white;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+nav a{
+  padding-left: 40px;
+}

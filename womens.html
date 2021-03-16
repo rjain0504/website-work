@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="women.css">
+    <title>Womens Collection</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top my-3">
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+        <a class="navbar-brand" href="#"><i class="fa fa-shopping-bag" aria-hidden="true">Shopstore</i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="shop.html "class="text">Mens<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="#">Womens</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Essentials
+			      </a>
+			      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			      	<div class="container d-flex" style="width: 80%">
+			      		<a class="dropdown-item" href="#">Formal wear</a>
+			      	</div>
+			      </div>
+			  </li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="type your wish" aria-label="Search">
+				<button class="btn my-2 my-sm-0" id="search" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+	<nav>
+        <div class="main">
+            <div class="slider">
+				<ul class="slider-parent">
+					<li class="images-list" data-slider="1"></li>
+                    <li class="images-list" data-slider="2"></li>
+                    <li class="images-list" data-slider="3"></li>
+                    <li class="images-list" data-slider="4"></li>
+                    
+                </ul>
+                <ol class="buttom-circles">
+                	<li class="buttom-circles-list slider-active"  data-slider="1"><i class="fa fa-circle-thin"></i></li>
+                    <li class="buttom-circles-list " data-slider="2"><i class="fa fa-circle-thin"></i></li>
+                    <li class="buttom-circles-list" data-slider="3"><i class="fa fa-circle-thin"></i></li>
+                    <li class="buttom-circles-list" data-slider="4"><i class="fa fa-circle-thin"></i></li>
+                    
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script  src="function.js"></script>
+
+<script>
+    $(function () {
+    "use strict";
+    
+    var slider          = $('.slider'),
+        sliderUl        = slider.find('.slider-parent'),
+        sliderUlLi      = sliderUl.find('.images-list'),
+        sliderOl        = slider.find('.buttom-circles'),
+        sliderOlLi      = sliderOl.find('.buttom-circles-list'),
+        sliderFaRight   = slider.find('> .fa:first-of-type'),
+        sliderFaLeft    = slider.find('> .fa:last-of-type'),
+        sliderTime      = 1000,
+        sliderWait      = 2000,
+        sliderSetInt,
+        resumeAndPause;
+    
+    sliderFaLeft.fadeOut();
+    
+ 
+    function resetWH() {
+        slider.width(slider.parent().width()).height(slider.parent().width() * 0.5);
+        sliderUl.width(slider.width() * sliderUlLi.length).height(slider.height());
+        sliderUlLi.width(slider.width()).height(slider.height());
+        
+    }
+    resetWH();
+ 
+    function runSlider() {
+        if (sliderOlLi.hasClass('slider-active')) {
+            sliderUl.animate({
+                marginLeft: -slider.width() * ($('.slider-active').data('slider') - 1)
+            }, sliderTime);
+        }
+        if ($('.slider-active').is(':first-of-type')) {
+            sliderFaLeft.fadeOut();
+        } else {
+            sliderFaLeft.fadeIn();
+        }
+        if ($('.slider-active').next().is(':last-of-type')) {
+            sliderFaRight.fadeOut();
+        } else {
+            sliderFaRight.fadeIn();
+        }
+    }
+ 
+    function runRight() {
+        slider.each(function () {
+            $('.slider-active').next().addClass('slider-active').siblings().removeClass('slider-active');
+            runSlider();
+        });
+    }
+ 
+    function runLeft() {
+        slider.each(function () {
+            $('.slider-active').prev().addClass('slider-active').siblings().removeClass('slider-active');
+            runSlider();
+        });
+    }
+ 
+    sliderSetInt = function autoRunSlider() {
+        if ($('.slider-active').next().is(':last-of-type')) {
+            sliderUl.animate({
+                marginLeft: -sliderUlLi.width() * $('.slider-active').data('slider')
+            }, sliderTime, function () {
+                sliderUl.css('margin-left', 0);
+                sliderOlLi.first().addClass('slider-active').siblings().removeClass('slider-active');
+            });
+        } else {
+            runRight();
+        }
+    };
+    
+    resumeAndPause = setInterval(sliderSetInt, sliderWait);
+    
+ 
+    $(window).on('resize', function () {
+        resetWH();
+    });
+    
+ 
+    slider.each(function () {
+        sliderOlLi.click(function () {
+            $(this).addClass('slider-active').siblings().removeClass('slider-active');
+            runSlider();
+        });
+    });
+    
+    sliderFaRight.on('click', function () {
+        runRight();
+    });
+    sliderFaLeft.on('click', function () {
+        runLeft();
+    });
+    
+    slider.find('.fa').hover(function () {
+        clearInterval(resumeAndPause);
+    }, function () {
+        resumeAndPause = setInterval(sliderSetInt, sliderWait);
+    });
+});
+</script>
+<div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="sidenav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a></div>
+  
+
+ 
+  <script type="text/javascript">
+    
+
+
+
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+
+
+
+
+
+</script>
+
+	
+	<div class="container my-4">
+		<h1 class="diplay-4 heading">Shop by Category</h1>
+		<hr style="width: 600">
+		<div class="row">
+			<div class="col-lg-4 col-sm-4">
+				<div class="card" width="15rem" type='button'>
+					<a href="Western.html"><img src="images/5.webp" class="card-img-top" alt="Western wear"></a>
+  					<div class="card-body">
+    					<h5 class="card-title">Western</h5>
+    					<hr style="width: 600">
+  					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-4">
+				<div class="card" width="15rem" type="button">
+					<a href="Traditional.html"><img src="images/6.jpg"  class="card-img-top" alt="Casual wear"></a>
+  					<div class="card-body">
+    					<h5 class="card-title">Traditional</h5>
+    					<hr style="width: 600">
+  					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-4">
+				<div class="card" width="15rem" type="button">
+					<a href="casualwear.html"><img src="images/7.jpg"  class="card-img-top" alt="Casual wear"></a>
+  					<div class="card-body">
+    					<h5 class="card-title">Casual</h5>
+    					<hr style="width: 600">
+  					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	
+	<div class="container my-5">
+		<h1 class="diplay-4 heading">Shop by Brands</h1>
+		<hr style="width: 400">
+		<div class="row">
+			<div class="col-md-4 col-sm-6">
+				<div class="btn brand" width="25%">
+					<a href=""><img src="images/hrx_logo.PNG" class="card-img-top rounded-circle" alt="Formal wear"></a>
+					<hr style="py-3 width: 50; color: grey ">
+    				<a href=""><h5 class="card-title brandlogo">HRX</h5></a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="btn brand" width="25%">
+					<a href=""><img src="images/redtape_logo.JPG" class="card-img-top rounded-circle" alt="Formal wear"></a>
+					<hr>
+    				<a href=""><h5 class="card-title brandlogo">Redtape</h5></a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="btn brand" width="25%">
+					<a href=""><img src="images/raymonds_logo.PNG" class="card-img-top rounded-circle" alt="Formal wear"></a>
+					<hr>
+    				<a href=""><h5 class="card-title brandlogo">Raymonds</h5></a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="btn brand" width="25%">
+					<a href=""><img src="images/peterengland_logo.PNG" class="card-img-top rounded-circle" alt="Formal wear"></a>
+					<hr>
+    				<a href=""><h5 class="card-title brandlogo">Peterengland</h5></a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="btn brand" width="25%">
+					<a href=""><img src="images/adidas_logo.PNG" class="card-img-top rounded-circle" alt="Formal wear"></a>
+					<hr>
+    				<a href=""><h5 class="card-title brandlogo">Adidas</h5></a>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="btn brand" width="25%">
+					<a href=""><img src="images/ucb_logo.JPG" class="card-img-top rounded-circle" alt="Formal wear"></a>
+					<hr>
+    				<a href=""><h5 class="card-title brandlogo">United Colors of Benniton</h5></a>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+    <div class="container heading">
+        <h1 class="display-4">Special Stores</h1>
+        <hr style="width: 400">
+        <div class="row">
+            <div class="col-md-3 my-3"> 
+                <div class="btn">
+                    <a href=""><h2 class="price">Under 299</h2></a>
+                    
+                </div>
+            </div>
+            <div class="col-md-6 my-3 middle"> 
+                <div class="btn">
+                    <a href=""><h2 class="price">Under 499</h2></a>
+                    
+                </div>
+            </div>
+            <div class="col-md-3 my-3"> 
+                <div class="btn">
+                    <a href=""><h2 class="price">Under 799</h2></a>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="row1">
+            <div class="col-md-3 my-3"> 
+                <div class="btn">
+                    <a href=""><h2 class="price">70% off</h2></a>
+                    
+                </div>
+            </div>
+            <div class="col-md-6 my-3 middle"> 
+                <div class="btn">
+                    <a href=""><h2 class="price">50% off</h2></a>
+                    
+                </div>
+            </div>
+            <div class="col-md-3 my-3"> 
+                <div class="btn">
+                    <a href=""><h2 class="price">40% off</h2></a>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+	
+
+</body>
+</html>
